@@ -12,7 +12,7 @@ requirements. There are only project requirements.
 Uma vez que no enunciado do projeto fala em produtos terem variantes que diferem
 em tamanho e cores, fiquei confuso com a frase anterior. É suposto considerar parametros
 como tamanho e cores em Produto sendo esses variante da Familia de Produtos? Ou haver Familia de Produtos, Produto e ainda Variante do Produto?
-
+>
 > **Answer:** Considerar que apenas o tamanho e cor poderão ser as únicas variantes
 de um produto é duma pobreza extrema. Trata-se de um exemplo muito simples. Na prática, pode variar imensa coisa entre produtos.
 Para tornar a coisa minimamente gerível, considera-se que um produto é uma variante de uma família de produtos, porque tem algo que
@@ -92,7 +92,7 @@ Although products from same family or variants may share almost similar BOMs or 
 > **Question:** can we consider that a workstation is the same as a machine?
 >
 > **Answer:** no, in the text says:
-these [work]stations can be composed of robotic units, automated machines, machines operated by human operators,
+these [work]stations can be composed of robotic units, automated mach\ines, machines operated by human operators,
 or human operators’ workstations. The stations are capable of performing a set of manufacturing operations that depend on the type of industry; for example, in the furniture industry, the most common operations include cutting, drilling, gluing, assembly, polishing, varnishing, and painting.
 But you can consider that an workstation don't have more than one machine.
 
