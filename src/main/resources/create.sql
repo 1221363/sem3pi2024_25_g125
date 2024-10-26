@@ -24,7 +24,7 @@ CREATE TABLE BillOfMaterials (Productcode varchar2(255) NOT NULL, Partcode varch
 CREATE TABLE BillOfOperations (sequenceNumber number(10) NOT NULL, ProductFamilyID number(10) NOT NULL, OperationID number(10) NOT NULL, PRIMARY KEY (sequenceNumber, ProductFamilyID, OperationID));
 CREATE TABLE ClientOrder (ID number(10) NOT NULL, Customer_nif number(10) NOT NULL, dateOrder date NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Customer (nif number(10) NOT NULL, Location_address varchar2(255) NOT NULL, Location_zip varchar2(255) NOT NULL, name varchar2(255) NOT NULL, vatin varchar2(255) NOT NULL, email varchar2(255) NOT NULL, phoneNumber number(19) NOT NULL, category varchar2(255), PRIMARY KEY (nif));
-CREATE TABLE Delivery (ID number(10) GENERATED AS IDENTITY, dateDelivery date NOT NULL, Order_ID number(10) NOT NULL, Customer_nif number(10) NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE Delivery (ID number(10) GENERATED AS IDENTITY, dateDelivery date NOT NULL, OrderID number(10) NOT NULL, Customer_nif number(10) NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Location (address varchar2(255) NOT NULL, zip varchar2(255) NOT NULL, town varchar2(255) NOT NULL, country varchar2(255) NOT NULL, PRIMARY KEY (address, zip));
 CREATE TABLE Machine (ID number GENERATED AS IDENTITY, OperatorID number NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Operation (ID number(10) NOT NULL, description varchar2(255) NOT NULL UNIQUE, PRIMARY KEY (ID));
@@ -45,7 +45,7 @@ ALTER TABLE Robot ADD CONSTRAINT FKRobot492914 FOREIGN KEY (Workstation_ID) REFE
 ALTER TABLE AutomaticMachine ADD CONSTRAINT FKAutomaticM191868 FOREIGN KEY (Workstation_ID) REFERENCES Workstation (ID);
 ALTER TABLE Machine ADD CONSTRAINT FKMachine79694 FOREIGN KEY (OperatorID) REFERENCES Operator (ID);
 ALTER TABLE ClientOrder ADD CONSTRAINT FKClientOrde702977 FOREIGN KEY (Customer_nif) REFERENCES Customer (nif);
-ALTER TABLE Delivery ADD CONSTRAINT FKDelivery565846 FOREIGN KEY (Order_ID) REFERENCES ClientOrder (ID);
+ALTER TABLE Delivery ADD CONSTRAINT FKDelivery971874 FOREIGN KEY (OrderID) REFERENCES ClientOrder (ID);
 ALTER TABLE Customer ADD CONSTRAINT FKCustomer195476 FOREIGN KEY (Location_address, Location_zip) REFERENCES Location (address, zip);
 ALTER TABLE Workstation ADD CONSTRAINT FKWorkstatio23355 FOREIGN KEY (WorkstationType_ID) REFERENCES WorkstationType (ID);
 ALTER TABLE Operation_WorkstationType ADD CONSTRAINT FKOperation_103627 FOREIGN KEY (Operation_ID) REFERENCES Operation (ID);
