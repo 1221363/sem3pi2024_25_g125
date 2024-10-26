@@ -1,12 +1,12 @@
 -- SQL Commands for sheet: Clients
-INSERT INTO Location(address, ZIP, Town, Country) values ('4200-047','Porto','Portugal');
-INSERT INTO Location(address, ZIP, Town, Country) values ('4465-219','São Mamede de Infesta','Portugal');
-INSERT INTO Location(address, ZIP, Town, Country) values ('4400-023','Vila Nova de Gaia','Portugal');
-INSERT INTO Location(address, ZIP, Town, Country) values ('110 00','Nové Město','Czechia');
-INSERT INTO Customer(nif, Name, VATIN, address, Email, phoneNumber) values (456,'Carvalho & Carvalho,Lda','PT501245987','Tv. Augusto Lessa 23','idont@care.com',003518340500);
-INSERT INTO Customer(nif, Name, VATIN, address, Email, phoneNumber) values (785,'Tudo para a casa,Lda','PT501245488','R. Dr. Barros 93','me@neither.com',003518340500);
-INSERT INTO Customer(nif, Name, VATIN, address, Email, phoneNumber) values (657,'Sair de Cena','PT501242417','EDIFICIO CRISTAL lj18,R. António Correia de Carvalho 88','some@email.com',003518340500);
-INSERT INTO Customer(nif, Name, VATIN, address, Email, phoneNumber) values (348,'U Fleku','CZ6451237810','Křemencova 11','some.random@email.cz',004201234567);
+INSERT INTO Location(address, ZIP, Town, Country) values ('Tv. Augusto Lessa 23','4200-047','Porto','Portugal');
+INSERT INTO Location(address, ZIP, Town, Country) values ('R. Dr. Barros 93','4465-219','São Mamede de Infesta','Portugal');
+INSERT INTO Location(address, ZIP, Town, Country) values ('EDIFICIO CRISTAL lj18,R. António Correia de Carvalho 88','4400-023','Vila Nova de Gaia','Portugal');
+INSERT INTO Location(address, ZIP, Town, Country) values ('Křemencova 11','110 00','Nové Město','Czechia');
+INSERT INTO Customer(nif, Name, VATIN, Location_address, Location_zip, Email, phoneNumber) values (456,'Carvalho & Carvalho,Lda','PT501245987','Tv. Augusto Lessa 23','4200-047','idont@care.com',003518340500);
+INSERT INTO Customer(nif, Name, VATIN, Location_address, Location_zip, Email, phoneNumber) values (785,'Tudo para a casa,Lda','PT501245488','R. Dr. Barros 93','4465-219','me@neither.com',003518340500);
+INSERT INTO Customer(nif, Name, VATIN, Location_address, Location_zip, Email, phoneNumber) values (657,'Sair de Cena','PT501242417','EDIFICIO CRISTAL lj18,R. António Correia de Carvalho 88','4400-023','some@email.com',003518340500);
+INSERT INTO Customer(nif, Name, VATIN, Location_address, Location_zip, Email, phoneNumber) values (348,'U Fleku','CZ6451237810','Křemencova 11','110 00','some.random@email.cz',004201234567);
 
 -- SQL Commands for sheet: ProductFamily
 INSERT INTO ProductFamily(ID, Name) values (125,'Pro Line pots');
@@ -25,45 +25,45 @@ INSERT INTO Product(Code, Name, Description, productFamily_ID) values ('AS12945S
 INSERT INTO Product(Code, Name, Description, productFamily_ID) values ('AS12945G48','Pro Clear 17 lid','17 cm glass lid',146);
 
 -- SQL Commands for sheet: Orders
-INSERT INTO Order(ID, customer_nif, date) values (1,785,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (1,785,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (2,657,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (2,657,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (3,348,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (3,348,'15/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (4,785,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (4,785,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (4,785,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (5,657,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (6,348,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (6,348,'18/09/da manhã');
-INSERT INTO Order(ID, customer_nif, date) values (7,456,'21/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (1,'AS12945S22','23/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (1,'AS12945S20','23/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (2,'AS12945S22','26/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (2,'AS12945P17','26/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (3,'AS12945S22','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (3,'AS12945S20','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (4,'AS12945S20','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (4,'AS12945S22','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (4,'AS12945S17','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (5,'AS12945S22','25/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (6,'AS12945S17','26/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (6,'AS12945P17','26/09/da manhã');
-INSERT INTO Delivery(Order_ID, customer_nif, date) values (7,'AS12945S22','26/09/da manhã');
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (1,'AS12945S22',5);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (1,'AS12945S20',15);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (2,'AS12945S22',10);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (2,'AS12945P17',20);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (3,'AS12945S22',10);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (3,'AS12945S20',10);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (4,'AS12945S20',24);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (4,'AS12945S22',16);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (4,'AS12945S17',8);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (5,'AS12945S22',12);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (6,'AS12945S17',8);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (6,'AS12945P17',16);
-INSERT INTO ProductionOrder(ID, productcode, Quantity) values (7,'AS12945S22',8);
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (1,785,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (1,785,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (2,657,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (2,657,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (3,348,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (3,348,TO_DATE('15/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (4,785,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (4,785,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (4,785,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (5,657,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (6,348,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (6,348,TO_DATE('18/09/2024','DD/MM/YYYY'));
+INSERT INTO ClientOrder(ID, customer_nif, DateOrder) values (7,456,TO_DATE('21/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (1,785,TO_DATE('23/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (1,785,TO_DATE('23/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (2,657,TO_DATE('26/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (2,657,TO_DATE('26/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (3,348,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (3,348,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (4,785,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (4,785,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (4,785,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (5,657,TO_DATE('25/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (6,348,TO_DATE('26/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (6,348,TO_DATE('26/09/2024','DD/MM/YYYY'));
+INSERT INTO Delivery(OrderID, customer_nif, DateDelivery) values (7,456,TO_DATE('26/09/2024','DD/MM/YYYY'));
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (1,'AS12945S22',5);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (1,'AS12945S20',15);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (2,'AS12945S22',10);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (2,'AS12945P17',20);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (3,'AS12945S22',10);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (3,'AS12945S20',10);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (4,'AS12945S20',24);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (4,'AS12945S22',16);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (4,'AS12945S17',8);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (5,'AS12945S22',12);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (6,'AS12945S17',8);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (6,'AS12945P17',16);
+INSERT INTO ProductionOrder(OrderID, productcode, Quantity) values (7,'AS12945S22',8);
 
 -- SQL Commands for sheet: WorkstationTypes
 INSERT INTO WorkstationType(ID, Name) values ('A4578','600t cold forging stamping press');
@@ -99,24 +99,37 @@ INSERT INTO Operation(ID, Description) values (5682,'Final pan base pressing');
 INSERT INTO Operation(ID, Description) values (5683,'Pan base finishing');
 INSERT INTO Operation(ID, Description) values (5665,'Handle welding');
 INSERT INTO Operation(ID, Description) values (5688,'Pan test and packaging');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5647,'A4578'),(5647,'A4588'),(5647,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5649,'A4588'),(5649,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5651,'A4588'),(5651,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5653,'C5637');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5655,'A4588'),(5655,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5657,'C5637');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5659,'S3271');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5661,'T3452');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5663,'K3675');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5665,'D9123');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5667,'Q3547');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5669,'Q3547');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5671,'Q5478');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5681,'A4588'),(5681,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5682,'A4588'),(5682,'A4598');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5683,'C5637');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5665,'D9123');
-INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) values (5688,'K3675');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5647,'A4578');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5647,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5647,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5649,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5649,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5651,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5651,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5653,'C5637');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5655,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5655,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5657,'C5637');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5659,'S3271');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5661,'T3452');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5663,'K3675');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5665,'D9123');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5667,'Q3547');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5669,'Q3547');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5671,'Q5478');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5681,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5681,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5682,'A4588');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5682,'A4598');
+
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5683,'C5637');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5665,'D9123');
+INSERT INTO Operation_WorkstationType(Operation_ID, WorkstationType_ID) VALUES (5688,'K3675');
 
 -- SQL Commands for sheet: Workstations
 INSERT INTO Workstation(ID, WorkstationType_ID, Name, Description) values (9875,'A4578','Press 01','220-630t cold forging press');
