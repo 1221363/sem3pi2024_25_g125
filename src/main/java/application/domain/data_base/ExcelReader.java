@@ -218,9 +218,9 @@ public class ExcelReader {
          */
         PRODUCT_FAMILY("ProductFamily"),
         /**
-         * Order collumns to read.
+         * Client order collumns to read.
          */
-        ORDER("Order"),
+        CLIENT_ORDER("ClientOrder"),
         /**
          * Delivery collumns to read.
          */
@@ -246,9 +246,9 @@ public class ExcelReader {
          */
         WORKSTATION("Workstation"),
         /**
-         * Part collumns to read.
+         * Product bill of materials collumns to read.
          */
-        PART("Part"),
+        PRODUCT_BILL_OF_MATERIALS("Product_BillOfMaterials"),
         /**
          * BillOfMaterials collumns to read.
          */
