@@ -6,9 +6,9 @@ FROM
         JOIN
     BillOfMaterials bom
     ON
-        po.Productcode = bom.parent_code  -- Relaciona o código do produto na ProductionOrder com o parent_code na BillOfMaterials
+        po.Productcode = bom.parent_code
 WHERE
-    po.OrderID = 1  -- Código específico da ordem de cliente
+    po.OrderID = 1
 GROUP BY
     po.OrderID, bom.child_code
 ORDER BY

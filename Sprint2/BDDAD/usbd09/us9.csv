@@ -1,0 +1,20 @@
+Operation Sequence,Operation Description,Workstation Type
+1,Disc cutting,600t cold forging stamping press
+1,Disc cutting,600t cold forging precision stamping press
+1,Disc cutting,1000t cold forging precision stamping press
+2,Disc cutting,600t cold forging stamping press
+2,Disc cutting,600t cold forging precision stamping press
+2,Disc cutting,1000t cold forging precision stamping press
+3,Initial pot base pressing,600t cold forging precision stamping press
+3,Initial pot base pressing,1000t cold forging precision stamping press
+4,Final pot base pressing,600t cold forging precision stamping press
+4,Final pot base pressing,1000t cold forging precision stamping press
+5,Pot base finishing,Border trimming
+6,Pot handles riveting,Handle rivet
+7,Pot base polishing,Stainless steel polishing
+8,Lid pressing,600t cold forging precision stamping press
+8,Lid pressing,1000t cold forging precision stamping press
+9,Lid finishing,Border trimming
+10,Lid handle screw,Assembly T1
+11,Lid polishing,Stainless steel polishing
+12,Pot test and packaging,Packaging
